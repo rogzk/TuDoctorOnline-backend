@@ -56,7 +56,7 @@ DoctorOperaciones.consultarDoctores = async(req, res) => {
 DoctorOperaciones.consultarDoctor = async(req, res) => {
     try {
         const id = req.params.id;
-        const doctor = await DoctorModelo.findById();
+        const doctor = await DoctorModelo.findById(id);
         if (doctor != 0){
             res.status(200).send(doctor); //200 = Encontro informacion en BD   
         }else{
